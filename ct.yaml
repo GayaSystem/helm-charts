@@ -1,0 +1,8 @@
+chart-dirs:
+  - charts
+target-branch: main
+chart-repos:
+  - common-library=https://tonorg.github.io/charts
+helm-extra-args: "--timeout 600s"
+validate-maintainers: false
+check-version-increment: true
