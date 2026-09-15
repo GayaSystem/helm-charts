@@ -24,6 +24,17 @@ If release name contains chart name it will be used as a full name.
 {{- end }}
 
 {{/*
+Create chart namespace.
+*/}}
+{{- define "lewindigo.namespace" -}}
+{{- if .Values.namespaceOverride }}
+{{- .Values.namespaceOverride | replace "+" "_" | trunc 63 | trimSuffix "-" }}
+{{- else }}
+{{- printf "%s" .Chart.Name | replace "+" "_" | trunc 63 | trimSuffix "-" }}
+{{- end }}
+{{- end }}
+
+{{/*
 Create chart name and version as used by the chart label.
 */}}
 {{- define "lewindigo.chart" -}}
@@ -55,8 +66,15 @@ Create the name of the service account to use
 */}}
 {{- define "lewindigo.serviceAccountName" -}}
 {{- if .Values.serviceAccount.create }}
-{{- default (include "lewindigo.fullname" .) .Values.serviceAccount.name }}
+{{- default (include "lewindigo.fullname" .) .Values.serviceAccount.name }}-sa
 {{- else }}
 {{- default "default" .Values.serviceAccount.name }}
 {{- end }}
+{{- end }}
+
+{{/*
+
+*/}}
+{{- define "lewindigo.ghcrAuthName" -}}
+ghcr-auth-lewindigo
 {{- end }}

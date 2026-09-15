@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: my-web-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: web-backend
+  template:
+    metadata:
+      labels:
+        app: web-backend # The Service will use this label to find these Pods
+    spec:
+      containers:
+        - name: www
+          image: ghcr.io/gayasystem/lewindigo:prod
+          ports:
+            - containerPort: 80 # The port the container is listening on

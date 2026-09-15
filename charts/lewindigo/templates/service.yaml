@@ -1,15 +1,25 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: {{ include "lewindigo.fullname" . }}
-  labels:
-    {{- include "lewindigo.labels" . | nindent 4 }}
+  name: www
+  namespace: lewindigo
 spec:
-  type: {{ .Values.service.type }}
-  ports:
-    - port: {{ .Values.service.port }}
-      targetPort: http
-      protocol: TCP
-      name: http
+  type: ClusterIP
   selector:
-    {{- include "lewindigo.selectorLabels" . | nindent 4 }}
+    app: www
+  ports:
+    - name: http
+      port: 80
+      targetPort: 80
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: dummy
+  namespace: lewindigo
+spec:
+  selector:
+    app: dummy
+  ports:
+    - port: 80
+      targetPort: 80

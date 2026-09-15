@@ -5,11 +5,25 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="96ddb653-75ad-41c6-8f5d-11f7ee5dac6f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.github/workflows/docs.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.github/workflows/lint-test.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.github/workflows/release.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ct.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/charts/lewindigo/templates/ingress-redirect.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/charts/lewindigo/templates/middlewares.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/charts/lewindigo/templates/namespace.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/charts/lewindigo/templates/resource-quota.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/charts/lewindigo/templates/service-account.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/charts/mychart/Chart.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/charts/mychart/templates/deployment.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/charts/mychart/templates/service.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/charts/mychart/values.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations/template.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/runConfigurations/template.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/charts/lewindigo/Chart.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/charts/lewindigo/Chart.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/charts/lewindigo/templates/_helpers.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/charts/lewindigo/templates/_helpers.tpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/charts/lewindigo/templates/deployment.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/charts/lewindigo/templates/deployment.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/charts/lewindigo/templates/hpa.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/charts/lewindigo/templates/hpa.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/charts/lewindigo/templates/httproute.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/charts/lewindigo/templates/httproute.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/charts/lewindigo/templates/ingress.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/charts/lewindigo/templates/ingress.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/charts/lewindigo/templates/service.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/charts/lewindigo/templates/service.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/charts/lewindigo/templates/serviceaccount.yaml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/charts/lewindigo/values.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/charts/lewindigo/values.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -22,61 +36,61 @@
   </component>
   <component name="NextEditCompletionFeaturesState">
     <decayedCancelled>
-      <entry key="MS100" value="1.0000000000000295" />
-      <entry key="MS500" value="1.0019667100587046" />
-      <entry key="S2" value="1.2105887102416983" />
-      <entry key="S5" value="1.5362583084089712" />
-      <entry key="S10" value="1.7322965986599768" />
-      <entry key="S30" value="1.901354585161387" />
-      <entry key="S60" value="1.9493979430035189" />
-      <entry key="M2" value="1.977562195119111" />
-      <entry key="M5" value="2.5855392052818784" />
-      <entry key="M10" value="6.283727617465203" />
-      <entry key="M15" value="10.614201875815574" />
-      <entry key="M30" value="19.75213529942756" />
-      <entry key="H1" value="30.757129486365773" />
-      <entry key="H2" value="53.925313630006094" />
-      <entry key="H4" value="89.99803526139763" />
-      <entry key="D1" value="157.2671115296421" />
-      <entry key="W1" value="174.84049867849794" />
+      <entry key="MS100" value="1.499830441593782" />
+      <entry key="MS500" value="3.281062901020291" />
+      <entry key="S2" value="6.206218277546324" />
+      <entry key="S5" value="7.6530200778381205" />
+      <entry key="S10" value="8.282734295853391" />
+      <entry key="S30" value="9.624769598935144" />
+      <entry key="S60" value="12.521971121833237" />
+      <entry key="M2" value="16.606769092878462" />
+      <entry key="M5" value="23.67118794910459" />
+      <entry key="M10" value="34.694920865764004" />
+      <entry key="M15" value="44.91067311991343" />
+      <entry key="M30" value="67.36352194099089" />
+      <entry key="H1" value="94.93891667130364" />
+      <entry key="H2" value="131.90678751571605" />
+      <entry key="H4" value="182.68562115723464" />
+      <entry key="D1" value="293.03488204668724" />
+      <entry key="W1" value="325.91245704086487" />
     </decayedCancelled>
     <decayedSelected>
       <entry key="MS100" value="0.0" />
       <entry key="MS500" value="0.0" />
       <entry key="S2" value="0.0" />
       <entry key="S5" value="0.0" />
-      <entry key="S10" value="0.0" />
-      <entry key="S30" value="0.0" />
-      <entry key="S60" value="0.0" />
-      <entry key="M2" value="0.0" />
-      <entry key="M5" value="0.0" />
-      <entry key="M10" value="0.0" />
-      <entry key="M15" value="0.0" />
-      <entry key="M30" value="0.0" />
-      <entry key="H1" value="0.0" />
-      <entry key="H2" value="0.0" />
-      <entry key="H4" value="0.0" />
-      <entry key="D1" value="0.0" />
-      <entry key="W1" value="0.0" />
+      <entry key="S10" value="3.696484192681029E-187" />
+      <entry key="S30" value="7.176779742103165E-63" />
+      <entry key="S60" value="8.471587656456823E-32" />
+      <entry key="M2" value="2.910599191997551E-16" />
+      <entry key="M5" value="6.103696937638799E-7" />
+      <entry key="M10" value="7.81261603922706E-4" />
+      <entry key="M15" value="0.00848263904603042" />
+      <entry key="M30" value="0.09210124345539758" />
+      <entry key="H1" value="0.30348186676537636" />
+      <entry key="H2" value="0.5508918830091588" />
+      <entry key="H4" value="0.7422209125382807" />
+      <entry key="D1" value="0.9515293699505618" />
+      <entry key="W1" value="0.9929273120583318" />
     </decayedSelected>
     <decayedShown>
-      <entry key="MS100" value="2.200318512233475E-4" />
-      <entry key="MS500" value="0.18578065144530767" />
-      <entry key="S2" value="0.7774522986979711" />
-      <entry key="S5" value="1.2748050378861109" />
-      <entry key="S10" value="1.5748369720275497" />
-      <entry key="S30" value="1.8410400224787755" />
-      <entry key="S60" value="1.9181154367493338" />
-      <entry key="M2" value="1.961627192749581" />
-      <entry key="M5" value="2.5790830790390746" />
-      <entry key="M10" value="6.280459204442402" />
-      <entry key="M15" value="10.611999182892111" />
-      <entry key="M30" value="19.751004225750354" />
-      <entry key="H1" value="30.756410925716025" />
-      <entry key="H2" value="53.92454532459259" />
-      <entry key="H4" value="89.99727758003958" />
-      <entry key="D1" value="157.2668641619734" />
-      <entry key="W1" value="174.84045876801468" />
+      <entry key="MS100" value="1.4356369947348984" />
+      <entry key="MS500" value="3.255783454610999" />
+      <entry key="S2" value="6.194787361553917" />
+      <entry key="S5" value="7.6474406974953455" />
+      <entry key="S10" value="8.27971055879599" />
+      <entry key="S30" value="9.62141999639981" />
+      <entry key="S60" value="12.516078466319533" />
+      <entry key="M2" value="16.600621561033364" />
+      <entry key="M5" value="23.66708660604777" />
+      <entry key="M10" value="34.69284348139133" />
+      <entry key="M15" value="44.916707625009735" />
+      <entry key="M30" value="67.45363449529391" />
+      <entry key="H1" value="95.24082352936932" />
+      <entry key="H2" value="132.45643658543096" />
+      <entry key="H4" value="183.42682579823128" />
+      <entry key="D1" value="293.986074102438" />
+      <entry key="W1" value="326.9053285944704" />
     </decayedShown>
   </component>
   <component name="ProjectColorInfo">{
@@ -103,7 +117,7 @@
     "git-widget-placeholder": "main",
     "junie.onboarding.icon.badge.shown": "true",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/Users/jean-charles.giardina/Projects/lewindigo-helm/charts/helm-charts",
+    "last_opened_file_path": "/Users/jean-charles.giardina/Projects/helm-charts/charts/lewindigo/templates",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.jshint": "true",
     "node.js.detected.package.tslint": "true",
@@ -111,12 +125,16 @@
     "node.js.selected.package.jshint": "",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "project.propVCSSupport.CommitDialog",
+    "python.packages.toolwindow.project.migrated.to.right.top.v2": "true",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
     "to.speed.mode.migration.done": "true"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/charts/lewindigo/templates" />
+      <recent name="$PROJECT_DIR$/charts/mychart/templates" />
+      <recent name="$PROJECT_DIR$/charts/test" />
       <recent name="$PROJECT_DIR$" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
@@ -132,7 +150,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-30f59d01ecdd-63390994e64e-intellij.indexing.shared.core-IU-262.8665.258" />
+        <option value="bundled-jdk-30f59d01ecdd-a203e0a19954-intellij.indexing.shared.core-IU-262.10315.125" />
+        <option value="bundled-js-predefined-d6986cc7102b-4abd2a77f808-JavaScript-IU-262.10315.125" />
       </set>
     </attachedChunks>
   </component>
@@ -164,6 +183,9 @@
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
     <MESSAGE value="Importation des fichiers Helm par défaut" />
-    <option name="LAST_COMMIT_MESSAGE" value="Importation des fichiers Helm par défaut" />
+    <MESSAGE value="Ajout des workflows" />
+    <MESSAGE value="Ajout des configurations d'exécutions" />
+    <MESSAGE value="Mise à jour du fichier de travail d'IntelliJ" />
+    <option name="LAST_COMMIT_MESSAGE" value="Mise à jour du fichier de travail d'IntelliJ" />
   </component>
 </project>

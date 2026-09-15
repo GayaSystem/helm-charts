@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: ResourceQuota
+metadata:
+  name: lewindigo-quota
+  namespace: lewindigo
+spec:
+  hard:
+    requests.cpu: "200m"
+    requests.memory: 512Mi
+    limits.cpu: "2"
+    limits.memory: 2Gi
+    pods: "2"
