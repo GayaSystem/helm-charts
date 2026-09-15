@@ -1,61 +1,55 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: www
+  name: web-app
   namespace: lewindigo
 spec:
-  replicas: 1
-  revisionHistoryLimit: 0
+  replicas: 2
   selector:
     matchLabels:
-      app: www
+      app: web-http   # <-- The Service will look for this label
   template:
     metadata:
       labels:
-        app: www
+        app: web-http
     spec:
-      serviceAccountName: lewindigo-sa
       containers:
-        - name: www
-          image: ghcr.io/gayasystem/lewindigo:prod
-          imagePullPolicy: Always
+        - name: nginx
+          image: nginx:alpine
           ports:
-            - containerPort: 80
-          resources:
-            requests:
-              cpu: "100m"
-              memory: "128Mi"
-            limits:
-              cpu: "500m"
-              memory: "512Mi"
+            - containerPort: 80 # <-- Your application port inside the pod
 ---
-apiVersion: apps/v1
-kind: Deployment
+apiVersion: v1
+kind: Service
 metadata:
-  name: dummy
+  name: my-http-service
   namespace: lewindigo
 spec:
-  replicas: 1
-  revisionHistoryLimit: 0
   selector:
-    matchLabels:
-      app: dummy
-  template:
-    metadata:
-      labels:
-        app: dummy
-    spec:
-      serviceAccountName: dummy-sa
-      automountServiceAccountToken: false
-      containers:
-        - name: dummy
-          image: traefik/whoami:v1.10.1
-          ports:
-            - containerPort: 80
-          resources:
-            requests:
-              cpu: "100m"
-              memory: "64Mi"
-            limits:
-              cpu: "500m"
-              memory: "256Mi"
+    app: web-http     # <-- Connects to the Pods matching this label
+  ports:
+    - protocol: TCP
+      port: 8080      # <-- The port the service listens on inside the cluster
+      targetPort: 80  # <-- The port on the pod where traffic is sent
+  type: ClusterIP     # <-- Default type (internal only)
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: my-app-ingress
+  namespace: lewindigo
+  annotations:
+    # Routes this traffic through the HTTP entrypoint
+    traefik.ingress.kubernetes.io/router.entryPoints: web
+spec:
+  ingressClassName: reverse-proxy
+  rules:
+    - http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: my-http-service
+                port:
+                  number: 8080

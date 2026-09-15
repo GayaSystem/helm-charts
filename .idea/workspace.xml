@@ -5,26 +5,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="96ddb653-75ad-41c6-8f5d-11f7ee5dac6f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/charts/lewindigo/templates/ingress-redirect.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/charts/lewindigo/templates/middlewares.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/charts/lewindigo/templates/namespace.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/charts/lewindigo/templates/resource-quota.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/charts/lewindigo/templates/service-account.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/charts/mychart/Chart.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/charts/mychart/templates/deployment.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/charts/mychart/templates/service.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/charts/mychart/values.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations/template.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/runConfigurations/template.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/charts/lewindigo/Chart.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/charts/lewindigo/Chart.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/charts/lewindigo/templates/_helpers.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/charts/lewindigo/templates/_helpers.tpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/charts/lewindigo/templates/NOTES.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/charts/lewindigo/templates/_helpers.tpl" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/charts/lewindigo/templates/deployment.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/charts/lewindigo/templates/deployment.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/charts/lewindigo/templates/hpa.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/charts/lewindigo/templates/hpa.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/charts/lewindigo/templates/httproute.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/charts/lewindigo/templates/httproute.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/charts/lewindigo/templates/ingress.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/charts/lewindigo/templates/ingress.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/charts/lewindigo/templates/service.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/charts/lewindigo/templates/service.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/charts/lewindigo/templates/serviceaccount.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/charts/lewindigo/values.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/charts/lewindigo/values.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/charts/lewindigo/templates/hpa.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/charts/lewindigo/templates/httproute.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/charts/lewindigo/templates/ingress-redirect.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/charts/lewindigo/templates/ingress.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/charts/lewindigo/templates/middlewares.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/charts/lewindigo/templates/namespace.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/charts/lewindigo/templates/resource-quota.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/charts/lewindigo/templates/service-account.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/charts/lewindigo/templates/service.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/charts/mychart/templates/deployment.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/charts/mychart/templates/deployment.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/charts/mychart/templates/service.yaml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,61 +31,61 @@
   </component>
   <component name="NextEditCompletionFeaturesState">
     <decayedCancelled>
-      <entry key="MS100" value="1.499830441593782" />
-      <entry key="MS500" value="3.281062901020291" />
-      <entry key="S2" value="6.206218277546324" />
-      <entry key="S5" value="7.6530200778381205" />
-      <entry key="S10" value="8.282734295853391" />
-      <entry key="S30" value="9.624769598935144" />
-      <entry key="S60" value="12.521971121833237" />
-      <entry key="M2" value="16.606769092878462" />
-      <entry key="M5" value="23.67118794910459" />
-      <entry key="M10" value="34.694920865764004" />
-      <entry key="M15" value="44.91067311991343" />
-      <entry key="M30" value="67.36352194099089" />
-      <entry key="H1" value="94.93891667130364" />
-      <entry key="H2" value="131.90678751571605" />
-      <entry key="H4" value="182.68562115723464" />
-      <entry key="D1" value="293.03488204668724" />
-      <entry key="W1" value="325.91245704086487" />
+      <entry key="MS100" value="1.0000000000013503" />
+      <entry key="MS500" value="1.0042274400176785" />
+      <entry key="S2" value="1.254987777467166" />
+      <entry key="S5" value="1.5789210367835786" />
+      <entry key="S10" value="1.7741166741250387" />
+      <entry key="S30" value="3.252112381717696" />
+      <entry key="S60" value="6.344426610746699" />
+      <entry key="M2" value="10.507882317875318" />
+      <entry key="M5" value="20.44494542798836" />
+      <entry key="M10" value="39.8801734652757" />
+      <entry key="M15" value="58.41286793306759" />
+      <entry key="M30" value="101.46448101459971" />
+      <entry key="H1" value="161.52497606259396" />
+      <entry key="H2" value="243.56885344596014" />
+      <entry key="H4" value="341.9623758318147" />
+      <entry key="D1" value="544.2472693068732" />
+      <entry key="W1" value="606.3526856618945" />
     </decayedCancelled>
     <decayedSelected>
       <entry key="MS100" value="0.0" />
       <entry key="MS500" value="0.0" />
       <entry key="S2" value="0.0" />
       <entry key="S5" value="0.0" />
-      <entry key="S10" value="3.696484192681029E-187" />
-      <entry key="S30" value="7.176779742103165E-63" />
-      <entry key="S60" value="8.471587656456823E-32" />
-      <entry key="M2" value="2.910599191997551E-16" />
-      <entry key="M5" value="6.103696937638799E-7" />
-      <entry key="M10" value="7.81261603922706E-4" />
-      <entry key="M15" value="0.00848263904603042" />
-      <entry key="M30" value="0.09210124345539758" />
-      <entry key="H1" value="0.30348186676537636" />
-      <entry key="H2" value="0.5508918830091588" />
-      <entry key="H4" value="0.7422209125382807" />
-      <entry key="D1" value="0.9515293699505618" />
-      <entry key="W1" value="0.9929273120583318" />
+      <entry key="S10" value="0.0" />
+      <entry key="S30" value="2.3620756606732573E-174" />
+      <entry key="S60" value="1.5369045711016744E-87" />
+      <entry key="M2" value="3.920337448615446E-44" />
+      <entry key="M5" value="4.338397892510108E-18" />
+      <entry key="M10" value="2.0828821120049165E-9" />
+      <entry key="M15" value="1.6309593124137978E-6" />
+      <entry key="M30" value="0.0012770901739555419" />
+      <entry key="H1" value="0.035736398446899104" />
+      <entry key="H2" value="0.18904073224281348" />
+      <entry key="H4" value="0.43478814639179525" />
+      <entry key="D1" value="0.8703881091069339" />
+      <entry key="W1" value="0.9803644719157555" />
     </decayedSelected>
     <decayedShown>
-      <entry key="MS100" value="1.4356369947348984" />
-      <entry key="MS500" value="3.255783454610999" />
-      <entry key="S2" value="6.194787361553917" />
-      <entry key="S5" value="7.6474406974953455" />
-      <entry key="S10" value="8.27971055879599" />
-      <entry key="S30" value="9.62141999639981" />
-      <entry key="S60" value="12.516078466319533" />
-      <entry key="M2" value="16.600621561033364" />
-      <entry key="M5" value="23.66708660604777" />
-      <entry key="M10" value="34.69284348139133" />
-      <entry key="M15" value="44.916707625009735" />
-      <entry key="M30" value="67.45363449529391" />
-      <entry key="H1" value="95.24082352936932" />
-      <entry key="H2" value="132.45643658543096" />
-      <entry key="H4" value="183.42682579823128" />
-      <entry key="D1" value="293.986074102438" />
-      <entry key="W1" value="326.9053285944704" />
+      <entry key="MS100" value="0.9659363289261409" />
+      <entry key="MS500" value="0.9972849184307605" />
+      <entry key="S2" value="1.2527267287989519" />
+      <entry key="S5" value="1.5777468035235167" />
+      <entry key="S10" value="1.7734509597276278" />
+      <entry key="S30" value="3.2517707911767104" />
+      <entry key="S60" value="6.344136202962826" />
+      <entry key="M2" value="10.507650030460274" />
+      <entry key="M5" value="20.444756509012883" />
+      <entry key="M10" value="39.879983511713036" />
+      <entry key="M15" value="58.41267340881603" />
+      <entry key="M30" value="101.46553137020007" />
+      <entry key="H1" value="161.56033350416376" />
+      <entry key="H2" value="243.75730597591584" />
+      <entry key="H4" value="342.3964578256773" />
+      <entry key="D1" value="545.1173241230866" />
+      <entry key="W1" value="607.3329913548372" />
     </decayedShown>
   </component>
   <component name="ProjectColorInfo">{
@@ -102,34 +97,34 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "KUBERNETES_SUPPRESS_CONFIG_CLUSTER_SUGGESTION": "true",
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
-    "Shell Script.lint.executor": "Run",
-    "Shell Script.template.executor": "Run",
-    "codeWithMe.voiceChat.enabledByDefault": "false",
-    "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
-    "git-widget-placeholder": "main",
-    "junie.onboarding.icon.badge.shown": "true",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/Users/jean-charles.giardina/Projects/helm-charts/charts/lewindigo/templates",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.jshint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.jshint": "",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "python.packages.toolwindow.project.migrated.to.right.top.v2": "true",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "to.speed.mode.migration.done": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;KUBERNETES_SUPPRESS_CONFIG_CLUSTER_SUGGESTION&quot;: &quot;true&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
+    &quot;Shell Script.lint.executor&quot;: &quot;Run&quot;,
+    &quot;Shell Script.template.executor&quot;: &quot;Run&quot;,
+    &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
+    &quot;com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/jean-charles.giardina/Projects/helm-charts/charts/lewindigo/templates&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.jshint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.jshint&quot;: &quot;&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;python.packages.toolwindow.project.migrated.to.right.top.v2&quot;: &quot;true&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;to.speed.mode.migration.done&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/charts/lewindigo/templates" />
@@ -150,8 +145,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-30f59d01ecdd-a203e0a19954-intellij.indexing.shared.core-IU-262.10315.125" />
-        <option value="bundled-js-predefined-d6986cc7102b-4abd2a77f808-JavaScript-IU-262.10315.125" />
+        <option value="bundled-jdk-30f59d01ecdd-63390994e64e-intellij.indexing.shared.core-IU-262.8665.337" />
+        <option value="bundled-js-predefined-d6986cc7102b-4abd2a77f808-JavaScript-IU-262.8665.337" />
       </set>
     </attachedChunks>
   </component>
