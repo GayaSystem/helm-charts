@@ -2,9 +2,9 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: web-app
-  namespace: lewindigo
+  namespace: {{ .Release.Namespace }}
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       app: web-http   # <-- The Service will look for this label
@@ -14,42 +14,13 @@ spec:
         app: web-http
     spec:
       containers:
-        - name: nginx
-          image: nginx:alpine
+        - name: lewindigo
+          {{- if eq .Values.environment "production" }}
+          image: {{ .Values.imageRegistry }}:{{ .Chart.AppVersion }}
+          imagePullPolicy: Always
+          {{- else if eq .Values.environment "development" }}
+          image: {{ .Values.imageRegistry }}:latest
+          imagePullPolicy: Never
+          {{- end }}
           ports:
             - containerPort: 80 # <-- Your application port inside the pod
----
-apiVersion: v1
-kind: Service
-metadata:
-  name: my-http-service
-  namespace: lewindigo
-spec:
-  selector:
-    app: web-http     # <-- Connects to the Pods matching this label
-  ports:
-    - protocol: TCP
-      port: 8080      # <-- The port the service listens on inside the cluster
-      targetPort: 80  # <-- The port on the pod where traffic is sent
-  type: ClusterIP     # <-- Default type (internal only)
----
-apiVersion: networking.k8s.io/v1
-kind: Ingress
-metadata:
-  name: my-app-ingress
-  namespace: lewindigo
-  annotations:
-    # Routes this traffic through the HTTP entrypoint
-    traefik.ingress.kubernetes.io/router.entryPoints: web
-spec:
-  ingressClassName: reverse-proxy
-  rules:
-    - http:
-        paths:
-          - path: /
-            pathType: Prefix
-            backend:
-              service:
-                name: my-http-service
-                port:
-                  number: 8080

@@ -5,21 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="96ddb653-75ad-41c6-8f5d-11f7ee5dac6f" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/charts/lewindigo/templates/ingress.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/charts/lewindigo/templates/middleware.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/charts/lewindigo/templates/service.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/charts/lewindigo/templates/NOTES.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/charts/lewindigo/templates/_helpers.tpl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/charts/lewindigo/templates/deployment.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/charts/lewindigo/templates/deployment.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/charts/lewindigo/templates/hpa.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/charts/lewindigo/templates/httproute.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/charts/lewindigo/templates/ingress-redirect.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/charts/lewindigo/templates/ingress.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/charts/lewindigo/templates/middlewares.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/charts/lewindigo/templates/namespace.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/charts/lewindigo/templates/resource-quota.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/charts/lewindigo/templates/service-account.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/charts/lewindigo/templates/service.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/charts/mychart/templates/deployment.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/charts/mychart/templates/deployment.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/charts/mychart/templates/service.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/charts/lewindigo/values.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/charts/lewindigo/values.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -125,6 +117,9 @@
     &quot;to.speed.mode.migration.done&quot;: &quot;true&quot;
   }
 }</component>
+  <component name="PyDebuggerOptionsProvider">
+    <option name="myDebuggerBackend" value="DEBUGPY" />
+  </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/charts/lewindigo/templates" />
@@ -141,14 +136,6 @@
       <item itemvalue="Shell Script.lint" />
       <item itemvalue="Shell Script.template" />
     </list>
-  </component>
-  <component name="SharedIndexes">
-    <attachedChunks>
-      <set>
-        <option value="bundled-jdk-30f59d01ecdd-63390994e64e-intellij.indexing.shared.core-IU-262.8665.337" />
-        <option value="bundled-js-predefined-d6986cc7102b-4abd2a77f808-JavaScript-IU-262.8665.337" />
-      </set>
-    </attachedChunks>
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">

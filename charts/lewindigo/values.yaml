@@ -1,0 +1,5 @@
+environment: production
+imageRegistry: gayasystem/lewindigo
+host:
+  name: ""
+  path: "/"

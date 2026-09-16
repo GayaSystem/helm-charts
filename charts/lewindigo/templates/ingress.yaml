@@ -1,0 +1,23 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: lewindigo-ingress
+  namespace: {{ .Release.Namespace }}
+  annotations:
+    # Routes this traffic through the HTTP and HTTPS entrypoints
+    traefik.ingress.kubernetes.io/router.entryPoints: web,websecure
+spec:
+  ingressClassName: reverse-proxy
+  rules:
+    - http:
+      {{- if .Values.host.name }}
+      host: {{ .Values.host.name }}
+      {{- end }}
+        paths:
+          - path: {{ .Values.host.path }}
+            pathType: Prefix
+            backend:
+              service:
+                name: lewindigo-service
+                port:
+                  number: 8080

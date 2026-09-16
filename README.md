@@ -24,3 +24,42 @@ cd gitops-infra/clusters/environments
 mkdir -p dev/${app} staging/${app} prod/${app}
 touch dev/${app}/values.yaml staging/${app}/values.yaml prod/${app}/values.yaml
 ```
+
+## Déploiement
+
+### Préparer Docker
+
+1. Installer Docker Client
+2. Installer Traefik
+
+```
+helm upgrade --install reverse-proxy traefik/traefik \
+  --namespace traefik --create-namespace \
+  --set ingressClass.enabled=true \
+  --set ingressClass.isDefaultClass=false \
+  --set ingressClass.name=reverse-proxy \
+  --set providers.kubernetesIngress.ingressClass=reverse-proxy \
+  --set providers.kubernetesCRD.ingressClass=reverse-proxy \
+  --set service.type=LoadBalancer \
+  --set ports.web.exposedPort=80 \
+  --set ports.websecure.exposedPort=443
+```
+
+### Construire l'image à tester
+
+1. Aller dans le projet
+2. Construire l'image
+
+```
+cd lewindigo
+docker build . -t gayasystem/lewindigo:latest
+```
+
+### Déployer localement
+
+```
+helm upgrade --install lewindigo-dev ./lewindigo \
+  --namespace lewindigo-dev \
+  --create-namespace \
+  --set environment=development
+```
