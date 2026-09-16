@@ -6,6 +6,7 @@ metadata:
   annotations:
     # Routes this traffic through the HTTP and HTTPS entrypoints
     traefik.ingress.kubernetes.io/router.entryPoints: web,websecure
+    traefik.ingress.kubernetes.io/router.middlewares: {{ .Release.Namespace }}-test-replacepathregex@kubernetescrd
 spec:
   ingressClassName: reverse-proxy
   rules:
