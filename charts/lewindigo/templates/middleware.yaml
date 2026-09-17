@@ -1,9 +1,9 @@
-# Replace path with regex
 apiVersion: traefik.io/v1alpha1
 kind: Middleware
 metadata:
-  name: test-replacepathregex
+  name: middleware
+  namespace: {{ .Release.Namespace }}
 spec:
   replacePathRegex:
-    regex: "^/dev(.*)"
+    regex: "^{{ .Values.host.path }}/(.*)"
     replacement: "/$1"

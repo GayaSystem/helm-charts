@@ -7,7 +7,7 @@ spec:
   replicas: 1
   selector:
     matchLabels:
-      app: web-http   # <-- The Service will look for this label
+      app: web-http
   template:
     metadata:
       labels:
@@ -23,4 +23,5 @@ spec:
           imagePullPolicy: Never
           {{- end }}
           ports:
-            - containerPort: 80 # <-- Your application port inside the pod
+            - name: http
+              containerPort: 80

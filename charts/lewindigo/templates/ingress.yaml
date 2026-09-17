@@ -4,9 +4,8 @@ metadata:
   name: lewindigo-ingress
   namespace: {{ .Release.Namespace }}
   annotations:
-    # Routes this traffic through the HTTP and HTTPS entrypoints
-    traefik.ingress.kubernetes.io/router.entryPoints: web,websecure
-    traefik.ingress.kubernetes.io/router.middlewares: {{ .Release.Namespace }}-test-replacepathregex@kubernetescrd
+    traefik.ingress.kubernetes.io/router.entrypoints: web
+    traefik.ingress.kubernetes.io/router.middlewares: {{ .Release.Namespace }}-middleware@kubernetescrd
 spec:
   ingressClassName: reverse-proxy
   rules:
@@ -21,4 +20,4 @@ spec:
               service:
                 name: lewindigo-service
                 port:
-                  number: 8080
+                  name: http

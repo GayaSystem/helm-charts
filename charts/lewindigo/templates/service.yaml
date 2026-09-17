@@ -5,9 +5,10 @@ metadata:
   namespace: {{ .Release.Namespace }}
 spec:
   selector:
-    app: web-http     # <-- Connects to the Pods matching this label
+    app: web-http
   ports:
-    - protocol: TCP
-      port: 8080      # <-- The port the service listens on inside the cluster
-      targetPort: 80  # <-- The port on the pod where traffic is sent
-  type: ClusterIP     # <-- Default type (internal only)
+    - name: http
+      protocol: TCP
+      port: 8080
+      targetPort: http
+  type: ClusterIP
