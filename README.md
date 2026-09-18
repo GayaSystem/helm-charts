@@ -30,7 +30,13 @@ touch dev/${app}/values.yaml staging/${app}/values.yaml prod/${app}/values.yaml
 ### Préparer Docker
 
 1. Installer Docker Client
-2. Installer Traefik
+2. S'identifier sur Docker Hub
+
+```
+echo $DOCKER_PASS | docker login --password-stdin -u $USER@gayasystem.com dhi.io
+```
+
+3. Installer Traefik
 
 ```
 helm upgrade --install reverse-proxy traefik/traefik \
