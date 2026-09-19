@@ -1,31 +1,31 @@
 apiVersion: traefik.io/v1alpha1
 kind: Middleware
 metadata:
-  name: test-replacepathregex
+  name: middleware-chain
   namespace: {{ .Release.Namespace }}
 spec:
-  replacePathRegex:
-    regex: "^{{ .Values.host.path }}(?:/)?(.*)"
-    replacement: "/$1"
+  chain:
+    middlewares:
+      - name: redirect-slash
+      - name: replace-path-regex
 ---
 apiVersion: traefik.io/v1alpha1
 kind: Middleware
 metadata:
-  name: redirect-dev-slash
-  namespace: lewindigo-dev
+  name: redirect-slash
+  namespace: {{ .Release.Namespace }}
 spec:
   redirectRegex:
-    regex: "^.*/dev$"
-    replacement: "/dev/"
+    regex: "^.*{{ .Values.host.path }}$"
+    replacement: "{{ .Values.host.path }}/"
     permanent: true
 ---
 apiVersion: traefik.io/v1alpha1
 kind: Middleware
 metadata:
-  name: dev-chain
-  namespace: lewindigo-dev
+  name: replace-path-regex
+  namespace: {{ .Release.Namespace }}
 spec:
-  chain:
-    middlewares:
-      - name: redirect-dev-slash
-      - name: test-replacepathregex
+  replacePathRegex:
+    regex: "^{{ .Values.host.path }}(?:/)?(.*)"
+    replacement: "/$1"
