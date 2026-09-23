@@ -9,7 +9,7 @@ Helm chart de l'application **Le Windigo**
 | Key | Type | Default | Description |
 |-----|------|---------|-------------|
 | environment | string | `"production"` | Environnement de déploiement |
-| host.name | string | `""` | Nom de domaine de l'application |
+| host.name | string | `"lewindigo.org"` | Nom de domaine de l'application |
 | host.path | string | `"/"` | Chemin de l'URL ou déployer l'application |
 | imageRegistry | string | `"ghcr.io/gayasystem/lewindigo"` | URL des paquets de l'application |
 
