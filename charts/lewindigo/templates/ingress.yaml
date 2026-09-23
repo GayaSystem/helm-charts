@@ -1,11 +1,11 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: lewindigo-ingress
+  name: web-ingress
   namespace: {{ .Release.Namespace }}
   annotations:
     traefik.ingress.kubernetes.io/router.entrypoints: web
-    traefik.ingress.kubernetes.io/router.middlewares: {{ .Release.Namespace }}-middleware@kubernetescrd
+    traefik.ingress.kubernetes.io/router.middlewares: {{ .Release.Namespace }}-middleware-chain@kubernetescrd
 spec:
   ingressClassName: reverse-proxy
   rules:
@@ -18,6 +18,6 @@ spec:
             pathType: Prefix
             backend:
               service:
-                name: lewindigo-service
+                name: web-service
                 port:
                   name: http

@@ -1,9 +1,31 @@
 apiVersion: traefik.io/v1alpha1
 kind: Middleware
 metadata:
-  name: middleware
+  name: middleware-chain
+  namespace: {{ .Release.Namespace }}
+spec:
+  chain:
+    middlewares:
+      - name: redirect-slash
+      - name: replace-path-regex
+---
+apiVersion: traefik.io/v1alpha1
+kind: Middleware
+metadata:
+  name: redirect-slash
+  namespace: {{ .Release.Namespace }}
+spec:
+  redirectRegex:
+    regex: "^.*{{ .Values.host.path }}$"
+    replacement: "{{ .Values.host.path }}/"
+    permanent: true
+---
+apiVersion: traefik.io/v1alpha1
+kind: Middleware
+metadata:
+  name: replace-path-regex
   namespace: {{ .Release.Namespace }}
 spec:
   replacePathRegex:
-    regex: "^{{ .Values.host.path }}/(.*)"
+    regex: "^{{ .Values.host.path }}(?:/)?(.*)"
     replacement: "/$1"
