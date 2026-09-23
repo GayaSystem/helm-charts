@@ -1,5 +1,9 @@
+# -- Environnement de déploiement
 environment: production
-imageRegistry: gayasystem/lewindigo
+# -- URL des paquets de l'application
+imageRegistry: ghcr.io/gayasystem/lewindigo
 host:
+  # -- Nom de domaine de l'application
   name: ""
+  # -- Chemin de l'URL ou déployer l'application
   path: "/"
