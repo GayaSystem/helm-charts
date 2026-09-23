@@ -43,7 +43,7 @@ jobs:
         uses: actions/upload-pages-artifact@v4
         with:
           # Upload builded files
-          path: 'build'
+          path: 'packages'
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v5
