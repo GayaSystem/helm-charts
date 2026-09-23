@@ -11,7 +11,7 @@ spec:
   rules:
     - http:
       {{- if .Values.host.name }}
-      host: {{ .Values.host.name }}
+      host: {{ .Values.host.name |quote }}
       {{- end }}
         paths:
           - path: {{ .Values.host.path }}
