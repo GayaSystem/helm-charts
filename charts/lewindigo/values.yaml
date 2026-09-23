@@ -4,6 +4,6 @@ environment: production
 imageRegistry: ghcr.io/gayasystem/lewindigo
 host:
   # -- Nom de domaine de l'application
-  name: ""
+  name: "lewindigo.org"
   # -- Chemin de l'URL ou déployer l'application
   path: "/"
