@@ -9,10 +9,12 @@ metadata:
 spec:
   ingressClassName: reverse-proxy
   rules:
+    {{- if .Values.host.name }}
+    - host: {{ .Values.host.name | quote }}
+      http:
+    {{- else }}
     - http:
-      {{- if .Values.host.name }}
-      host: {{ .Values.host.name |quote }}
-      {{- end }}
+    {{- end }}
         paths:
           - path: {{ .Values.host.path }}
             pathType: Prefix

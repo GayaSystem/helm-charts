@@ -1,6 +1,6 @@
 <component name="ProjectRunConfigurationManager">
-  <configuration default="false" name="template" type="ShConfigurationType">
-    <option name="SCRIPT_TEXT" value="helm template lewindigo charts/lewindigo -f ../gitops-infra/clusters/environments/prod/lewindigo/values.yaml" />
+  <configuration default="false" name="Template : lewindigo" type="ShConfigurationType">
+    <option name="SCRIPT_TEXT" value="helm template lewindigo charts/lewindigo" />
     <option name="INDEPENDENT_SCRIPT_PATH" value="true" />
     <option name="SCRIPT_PATH" value="" />
     <option name="SCRIPT_OPTIONS" value="" />
