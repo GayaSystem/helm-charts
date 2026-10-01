@@ -16,8 +16,8 @@ metadata:
   namespace: {{ .Release.Namespace }}
 spec:
   redirectRegex:
-    regex: "^.*{{ .Values.host.path }}$"
-    replacement: "{{ .Values.host.path }}/"
+    regex: ^({{ .Values.host.path }})$
+    replacement: /
     permanent: true
 ---
 apiVersion: traefik.io/v1alpha1
