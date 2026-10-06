@@ -1,6 +1,6 @@
 # lewindigo
 
-![Version: 0.3.2](https://img.shields.io/badge/Version-0.3.2-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: v1.0.0](https://img.shields.io/badge/AppVersion-v1.0.0-informational?style=flat-square)
+![Version: 0.4.0](https://img.shields.io/badge/Version-0.4.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: v1.0.0](https://img.shields.io/badge/AppVersion-v1.0.0-informational?style=flat-square)
 
 Helm chart de l'application **Le Windigo**
 
@@ -8,7 +8,7 @@ Helm chart de l'application **Le Windigo**
 
 | Key | Type | Default | Description |
 |-----|------|---------|-------------|
-| environment | string | `"production"` | Environnement de déploiement |
+| environment | string | `"production"` | Environnement de déploiement (production or development) |
 | host.name | string | `"lewindigo.org"` | Nom de domaine de l'application |
 | host.path | string | `"/"` | Chemin de l'URL ou déployer l'application |
 | imageRegistry | string | `"ghcr.io/gayasystem/lewindigo"` | URL des paquets de l'application |
