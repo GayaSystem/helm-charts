@@ -1,0 +1,6 @@
+apiVersion: v2
+name: api
+description: Helm chart de l'application **api**
+type: application
+version: 0.1.0 # Version du chart
+appVersion: "v0.1.1" # Version de l'application

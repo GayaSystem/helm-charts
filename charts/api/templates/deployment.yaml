@@ -1,0 +1,37 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: web-app
+  namespace: {{ .Release.Namespace }}
+spec:
+  replicas: 1
+  revisionHistoryLimit: 0
+  selector:
+    matchLabels:
+      app: web-http
+  template:
+    metadata:
+      labels:
+        app: web-http
+    spec:
+      serviceAccountName: api-sa
+      imagePullSecrets:
+        - name: ghcr-auth
+      containers:
+        - name: web-http
+          {{- if eq .Values.environment "production" }}
+          image: {{ .Values.imageRegistry }}:{{ .Chart.AppVersion }}
+          {{- else if eq .Values.environment "development" }}
+          image: {{ .Values.imageRegistry }}:latest
+          {{- end }}
+          imagePullPolicy: Always
+          ports:
+            - name: http
+              containerPort: 80
+          resources:
+            requests:
+              cpu: "10m"
+              memory: "8Mi"
+            limits:
+              cpu: "500m"
+              memory: "512Mi"
