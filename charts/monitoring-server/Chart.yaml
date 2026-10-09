@@ -1,0 +1,6 @@
+apiVersion: v2
+name: monitoring-server
+description: Helm chart de l'application **monitoring-server**
+type: application
+version: 0.1.0 # Version du chart
+appVersion: "v0.2.0" # Version de l'application Le Windigo
