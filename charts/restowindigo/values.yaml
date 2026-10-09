@@ -1,0 +1,11 @@
+# -- Environnement de déploiement (production or development)
+# -- `production` utilise la version de l'image de l'application du fichier Chart.yaml
+# -- `development` utilise la version `latest` de l'image de l'application
+environment: production
+# -- URL des paquets de l'application
+imageRegistry: ghcr.io/gayasystem/restowindigo
+host:
+  # -- Nom de domaine de l'application ou null pour ne pas gérer le nom de domaine
+  name: "restowindigo.com"
+  # -- Chemin de l'URL ou déployer l'application
+  path: "/"
