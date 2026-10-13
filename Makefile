@@ -4,6 +4,7 @@ SOURCE  := charts/%
 OBJECTS := $(shell find charts/* -type d -maxdepth 0)
 TARGETS := $(patsubst $(SOURCE), $(TARGET), $(OBJECTS))
 
+.SILENT:
 
 all: $(TARGETS) $(OBJ_DIR)/index.yaml
 
@@ -12,6 +13,7 @@ $(OBJ_DIR):
 
 $(TARGET): $(SOURCE) | $(OBJ_DIR)
 	cd $(OBJ_DIR) && \
+	helm dependency update ../$< && \
 	helm package ../$<
 
 $(OBJ_DIR)/index.yaml: $(TARGETS)
