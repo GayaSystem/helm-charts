@@ -16,8 +16,8 @@ metadata:
   namespace: {{ .Release.Namespace }}
 spec:
   redirectRegex:
-    regex: ^(http[s]?://[^/]+)({{ .Values.host.path }})
-    replacement: $2/
+    regex: (http[s]?://[^/]+)/({{ .Values.host.path }})$
+    replacement: /index.html
     permanent: true
 ---
 apiVersion: traefik.io/v1alpha1
@@ -27,5 +27,5 @@ metadata:
   namespace: {{ .Release.Namespace }}
 spec:
   replacePathRegex:
-    regex: ^{{ .Values.host.path }}/(.*)
-    replacement: /$1
+    regex: "^/{{ .Values.host.path }}/(.*)"
+    replacement: "/${1}"

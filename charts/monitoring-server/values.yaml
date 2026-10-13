@@ -7,5 +7,5 @@ imageRegistry: ghcr.io/gayasystem/monitoring-server
 host:
   # -- Nom de domaine de l'application ou null pour ne pas gérer le nom de domaine
   name: "monitoring.gayasystem.com"
-  # -- Chemin de l'URL ou déployer l'application
-  path: "/"
+  # -- Chemin de l'URL ou déployer l'application sans le '/' début ni de fin
+  path: ""

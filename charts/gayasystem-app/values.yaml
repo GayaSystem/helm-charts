@@ -8,4 +8,4 @@ host:
   # -- Nom de domaine de l'application ou null pour ne pas gérer le nom de domaine
   name: "gayasystem.app"
   # -- Chemin de l'URL ou déployer l'application
-  path: "/"
+  path: ""

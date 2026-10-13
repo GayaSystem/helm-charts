@@ -7,5 +7,5 @@ imageRegistry: ghcr.io/gayasystem/api
 host:
   # -- Nom de domaine de l'application ou null pour ne pas gérer le nom de domaine
   name: "api.gayasystem.com"
-  # -- Chemin de l'URL ou déployer l'application
-  path: "/"
+  # -- Chemin de l'URL ou déployer l'application sans le '/' début ni de fin
+  path: ""
