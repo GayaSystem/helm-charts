@@ -17,7 +17,7 @@ metadata:
 spec:
   redirectRegex:
     regex: ^(http[s]?://[^/]+)({{ .Values.host.path }})
-    replacement: $1$2
+    replacement: $2/
     permanent: true
 ---
 apiVersion: traefik.io/v1alpha1
