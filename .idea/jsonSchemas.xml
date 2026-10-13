@@ -17,6 +17,9 @@
                   <Item>
                     <option name="path" value="charts/mychart/Chart.yaml" />
                   </Item>
+                  <Item>
+                    <option name="path" value="charts/application-tmpl/Chart.yaml" />
+                  </Item>
                 </list>
               </option>
             </SchemaInfo>

@@ -4,7 +4,6 @@ SOURCE  := charts/%
 OBJECTS := $(shell find charts/* -type d -maxdepth 0)
 TARGETS := $(patsubst $(SOURCE), $(TARGET), $(OBJECTS))
 
-.SILENT:
 
 all: $(TARGETS) $(OBJ_DIR)/index.yaml
 
