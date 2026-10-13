@@ -39,7 +39,8 @@ jobs:
           make
           mkdir -p packages
           mv build packages/helm-charts
-          echo "Git" > packages/index.html
+          ls -lA packages
+          ls -lA packages/helm-charts
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v4
         with:
