@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: web-service
+  namespace: {{ .Release.Namespace }}
+spec:
+  selector:
+    app: web-http
+  ports:
+    - name: http
+      protocol: TCP
+      port: 80
+      targetPort: http
+  type: ClusterIP
