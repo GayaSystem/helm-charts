@@ -43,12 +43,12 @@ jobs:
         run: |
           mkdir -p build
           cd build
-          git tag
           TAGS=$(git tag | grep -E -e "-[0-9]+\.[0-9]+\.[0-9]+")
-          echo "4"
+          echo TAGS=${TAGS}
           for TAG in ${TAGS}; do
-            echo "5"
+            echo TAG=${TAG}
             APP=$(echo ${TAG} | sed "s/\(.*\)-[0-9]+\.[0-9]+\.[0-9]+/\1/")
+            echo APP=${APP}
             git switch -q --detach ${TAG}
             helm dependency update ../charts/${APP}
             helm package ../charts/${APP}
