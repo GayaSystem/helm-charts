@@ -38,7 +38,26 @@ jobs:
         uses: actions/configure-pages@v5
       - name: Build packages
         run: |
-          make
+          mkdir -p build
+          cd build
+          TAGS=$(git tag | grep -E -e "-[0-9]+\.[0-9]+\.[0-9]+")
+          for TAG in ${TAGS}; do
+            APP=$(echo ${TAG} | sed "s/\(.*\)-[0-9]+\.[0-9]+\.[0-9]+/\1/")
+            git switch -q --detach ${TAG}
+            helm dependency update ../charts/${APP}
+            helm package ../charts/${APP}
+          done
+
+          git switch -q main
+          APPS=$(find ../charts/* -type d -maxdepth 0)
+          for APP in ${APPS}; do
+            helm dependency update ../charts/${APP}
+            helm package ../charts/${APP}
+          done
+          
+          helm repo index .
+          cd ..
+
           mkdir -p packages
           mv build packages/helm-charts
       - name: Upload artifact
