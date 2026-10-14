@@ -46,19 +46,14 @@ jobs:
           TAGS=$(git tag | grep -E -e "-[0-9]+\.[0-9]+\.[0-9]+")
           for TAG in ${TAGS}; do
             APP=$(echo ${TAG} | sed "s/\(.*\)-[0-9]*\.[0-9]*\.[0-9]*/\1/")
-            echo APP=${APP}
             git switch -q --detach ${TAG}
             helm dependency update ../charts/${APP}
             helm package ../charts/${APP}
           done
-          echo "6"
 
           git switch -q main
-          echo "7"
           APPS=$(find ../charts/* -type d -maxdepth 0)
-          echo "8"
           for APP in ${APPS}; do
-          echo "9"
             helm dependency update ../charts/${APP}
             helm package ../charts/${APP}
           done
