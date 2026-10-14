@@ -38,11 +38,9 @@ jobs:
         uses: actions/configure-pages@v5
       - name: Build packages
         run: |
-          echo "1"
           mkdir -p build
-          echo "2"
           cd build
-          echo "3"
+          git tag
           TAGS=$(git tag | grep -E -e "-[0-9]+\.[0-9]+\.[0-9]+")
           echo "4"
           for TAG in ${TAGS}; do
