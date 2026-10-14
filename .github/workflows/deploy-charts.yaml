@@ -39,8 +39,6 @@ jobs:
           make
           mkdir -p packages
           mv build packages/helm-charts
-          ls -lA packages
-          ls -lA packages/helm-charts
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v4
         with:
