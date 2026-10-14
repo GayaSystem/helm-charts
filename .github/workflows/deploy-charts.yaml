@@ -43,6 +43,12 @@ jobs:
         run: |
           mkdir -p build
           cd build
+          APPS=$(find ../charts/* -type d -maxdepth 0)
+          for APP in ${APPS}; do
+            helm dependency update ../charts/${APP}
+            helm package ../charts/${APP}
+          done
+
           TAGS=$(git tag | grep -E -e "-[0-9]+\.[0-9]+\.[0-9]+")
           for TAG in ${TAGS}; do
             APP=$(echo ${TAG} | sed "s/\(.*\)-[0-9]*\.[0-9]*\.[0-9]*/\1/")
@@ -51,13 +57,6 @@ jobs:
             helm package ../charts/${APP}
           done
 
-          git switch -q main
-          APPS=$(find ../charts/* -type d -maxdepth 0)
-          for APP in ${APPS}; do
-            helm dependency update ../charts/${APP}
-            helm package ../charts/${APP}
-          done
-          
           helm repo index .
           cd ..
 
