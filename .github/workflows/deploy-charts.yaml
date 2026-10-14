@@ -14,7 +14,7 @@ env:
 
 # Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
 permissions:
-  contents: write
+  contents: read
   pages: write
   id-token: write
 
@@ -34,6 +34,9 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v7
+        with:
+          fetch-depth: 0    # Fetches all history so tags can be resolved
+          fetch-tags: true  # Explicitly ensures tags are pulled down
       - name: Setup Pages
         uses: actions/configure-pages@v5
       - name: Build packages
