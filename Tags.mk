@@ -5,6 +5,7 @@ TARGETS := $(patsubst %, $(TARGET), $(OBJECTS))
 .SILENT:
 
 all: $(TARGETS)
+	echo $(TARGETS)
 	git switch -q main
 
 $(TARGET):
