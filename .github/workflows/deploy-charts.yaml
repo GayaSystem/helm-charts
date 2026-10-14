@@ -38,19 +38,28 @@ jobs:
         uses: actions/configure-pages@v5
       - name: Build packages
         run: |
+          echo "1"
           mkdir -p build
+          echo "2"
           cd build
+          echo "3"
           TAGS=$(git tag | grep -E -e "-[0-9]+\.[0-9]+\.[0-9]+")
+          echo "4"
           for TAG in ${TAGS}; do
+            echo "5"
             APP=$(echo ${TAG} | sed "s/\(.*\)-[0-9]+\.[0-9]+\.[0-9]+/\1/")
             git switch -q --detach ${TAG}
             helm dependency update ../charts/${APP}
             helm package ../charts/${APP}
           done
+          echo "6"
 
           git switch -q main
+          echo "7"
           APPS=$(find ../charts/* -type d -maxdepth 0)
+          echo "8"
           for APP in ${APPS}; do
+          echo "9"
             helm dependency update ../charts/${APP}
             helm package ../charts/${APP}
           done
