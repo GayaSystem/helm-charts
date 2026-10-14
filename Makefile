@@ -1,24 +1,18 @@
 OBJ_DIR := build
-TARGET  := $(OBJ_DIR)/%.tgz
-SOURCE  := charts/%
-OBJECTS := $(shell find charts/* -type d -maxdepth 0)
-TARGETS := $(patsubst $(SOURCE), $(TARGET), $(OBJECTS))
+export OBJ_DIR
 
 .SILENT:
 
-all: $(TARGETS) $(OBJ_DIR)/index.yaml
+all: $(OBJ_DIR)
+	$(MAKE) -f Latest.mk all
+	$(MAKE) -f Tags.mk all
+	$(MAKE) $(OBJ_DIR)/index.yaml
 
 $(OBJ_DIR):
 	mkdir -p $(OBJ_DIR)
 
-$(TARGET): $(SOURCE) | $(OBJ_DIR)
-	cd $(OBJ_DIR) && \
-	helm dependency update ../$< && \
-	helm package ../$<
-
-$(OBJ_DIR)/index.yaml: $(TARGETS)
+$(OBJ_DIR)/index.yaml: $(OBJ_DIR)
 	helm repo index $(OBJ_DIR)
-	echo "Successfully created index.yaml and saved it to: $(shell pwd)/$(OBJ_DIR)"
 
 clean:
 	rm -rf $(OBJ_DIR)
