@@ -1,0 +1,41 @@
+{{- define "application-tmpl.middleware" -}}
+{{- if .Values.middleware.enabled -}}
+---
+apiVersion: traefik.io/v1alpha1
+kind: Middleware
+metadata:
+  name: middleware-chain
+  namespace: {{ include "common.names.namespace" . | quote }}
+  labels: {{- include "common.labels.standard" ( dict "customLabels" .Values.commonLabels "context" $ ) | nindent 4 }}
+  {{- $annotations := include "common.tplvalues.merge" (dict "values" (list .Values.middleware.annotations .Values.commonAnnotations) "context" .) | fromYaml }}
+  {{- if $annotations }}
+  annotations: {{- include "common.tplvalues.render" ( dict "value" $annotations "context" $ ) | nindent 4 }}
+  {{- end }}
+spec:
+  chain:
+    middlewares:
+      - name: redirect-slash
+      - name: replace-path-regex
+---
+apiVersion: traefik.io/v1alpha1
+kind: Middleware
+metadata:
+  name: redirect-slash
+  namespace: {{ include "common.names.namespace" . | quote }}
+spec:
+  redirectRegex:
+    regex: (http[s]?://[^/]+)({{ .Values.ingress.path }})$
+    replacement: /index.html
+    permanent: true
+---
+apiVersion: traefik.io/v1alpha1
+kind: Middleware
+metadata:
+  name: replace-path-regex
+  namespace: {{ include "common.names.namespace" . | quote }}
+spec:
+  replacePathRegex:
+    regex: "^{{ .Values.ingress.path }}/(.*)"
+    replacement: "/${1}"
+{{- end }}
+{{- end -}}

@@ -1,0 +1,4 @@
+{{- define "application-tmpl.app" -}}
+{{ include "helmet.app" . }}
+{{ include "application-tmpl.middleware" . }}
+{{- end }}
