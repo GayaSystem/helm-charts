@@ -1,0 +1,12 @@
+apiVersion: v2
+name: refugeslacdemele
+description: Helm chart de l'application **Refuges du lac Démélé**
+type: application
+version: 1.0.0 # Version du chart
+appVersion: "v0.1.0" # Version de l'application Le Windigo
+dependencies:
+  - name: application-tmpl
+    version: 1.0.0
+    repository: file://../application-tmpl
+    import-values: # <== It is mandatory if you want to import the Helmet default values.
+      - defaults

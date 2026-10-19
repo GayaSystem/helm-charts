@@ -1,0 +1,5 @@
+# -- URL des paquets de l'application
+image:
+  repository: gayasystem/refugeslacdemele
+ingress:
+  hostname: "refugeslacdemele.com"
